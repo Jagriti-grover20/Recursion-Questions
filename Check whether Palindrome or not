@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+bool ispalindrome(string s,int begin, int end)
+{
+	if(begin>=end) //a
+	{
+		return true;
+	}
+	bool small_res=true;
+	if(s[begin]==s[end])
+	{
+		small_res=ispalindrome(s,begin+1,end-1);
+	}
+	else
+	{
+		return false;
+	}
+	return small_res;
+}
+int main()
+{
+	string s;
+	cin>>s;
+	cout<<ispalindrome(s,0,s.length()-1);
+}
