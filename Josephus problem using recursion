@@ -1,0 +1,25 @@
+//https://practice.geeksforgeeks.org/problems/josephus-problem/1/?track=DSASP-Recursion&batchId=154#
+class Solution
+{
+    public:
+    int josephus(int n, int k)
+    {
+        //as indexing begin from 1 we have to add 1 later in the position
+        return (jos(n,k)+1);
+    }
+    int jos(int n,int k)
+    {
+        if(n==1) //if only 1 person is present return 0 as the safer position
+       {
+           return 0;
+       }
+       else
+       {
+           //iterate n-1 times as in every iteration 1 person is reducing 
+           //as gun is handed over to the first person again, we need to come to position k again so add k
+           //as we added k , the sum is inc to more so to reduce to the certain pos , mod with n
+       return ((jos(n-1,k)+k)%n);
+       }
+       
+    }
+};
