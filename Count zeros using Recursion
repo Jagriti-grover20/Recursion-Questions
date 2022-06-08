@@ -1,0 +1,22 @@
+//https://classroom.codingninjas.com/app/classroom/me/10345/content/174385/offering/2166379/problem/34
+int counter=0;
+int countZeros(int n) 
+{
+  if(n<10)
+  {
+      if(n==0)
+      {
+          return 1;
+      }
+      else
+      {
+          return 0;
+      }
+  }
+  if(n%10==0) //20%10==0 yes
+  {
+      counter++; //inc counter by 1
+  }
+  countZeros(n/10);   
+  return counter; //return 1
+}
