@@ -1,0 +1,24 @@
+//https://classroom.codingninjas.com/app/classroom/me/10345/content/174385/offering/2166372/problem/1130
+int firstIndex(int input[], int size, int x) {
+
+    //recursive call
+    if(size==0)
+    {
+        return -1;
+    }
+    //calculation by user
+     if(input[0]==x)
+ {
+     return 0;
+ }
+    int ans=firstIndex(input+1,size-1,x); //returning the index of element
+    if(ans== -1)
+    {
+        return -1;
+    }
+    else
+    {
+        return ans+1; //indexing of recursion begin from 0 but it should be +1 as we already solved
+                      //for 1st element
+    }
+}
