@@ -1,0 +1,35 @@
+//Given a string S, compute recursively a new string where identical chars that are adjacent in the original string are separated from each other by a "*".
+/*Sample Input 1 :
+hello
+Sample Output 1:
+hel*lo
+Sample Input 2 :
+aaaa
+Sample Output 2 :
+a*a*a*a/*
+
+#include<bits/stdc++.h>
+using namespace std;
+void helper(string s,int i,string &ans)
+{
+    if(s.length()==i) //base case
+    {
+        return;
+    }
+    if(s[i]==s[i+1])
+    {   //hello -> s[i]=l == s[i+1]=l 
+        ans=ans+s[i]; // ans=  ""   +  l
+        ans=ans+"*"; //    l=  l    +  *  
+    }
+    else
+    {   //h e 
+        ans= ans+s[i];
+    }
+    helper(s,i+1,ans);
+}
+void pairStar(char input[]) {
+string s(input);
+string ans="";
+helper(s,0,ans);
+strcpy(input,ans.c_str());
+}
