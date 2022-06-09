@@ -1,0 +1,15 @@
+bool checkNumber(int input[], int size, int x) {
+if(size>=0)
+{
+    if(input[size]==x)
+    {
+        return true;
+    }
+    else{
+       
+         return checkNumber(input,size-1,x);
+    }
+         
+}
+return false;
+}
