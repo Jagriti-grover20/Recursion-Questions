@@ -1,0 +1,25 @@
+int searching(int input[],int begin,int end,int element)
+{
+     int mid=(begin+end)/2;
+    
+        if(begin>end)
+    {
+        return -1;
+    }
+    if(input[mid]==element)
+    {
+        return mid;
+    }
+    else if(input[mid]>element)
+    {
+       return searching(input,begin,mid-1,element);
+    }
+    else
+    {
+      return searching(input,mid+1,end,element); 
+    }  
+}
+int binarySearch(int input[], int size, int element) {
+searching(input,0,size-1,element);     
+
+}
