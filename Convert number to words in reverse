@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+string s[]={"zero","one","two","three","four","five","six","seven","eight","nine","ten"};
+convert2048towordsinreverse(int n) //2048
+{
+   //base case
+   if(n==0)
+   {
+   	return 0;
+   }
+   //simple cal
+   int last_digit=n%10; //8
+   cout<<s[last_digit]<<" "; //converting 8 into words
+   convert2048towordsinreverse(n/10); //recursively calling for other digits
+}
+
+int main()
+{
+	int n;
+	cin>>n;
+	convert2048towordsinreverse(n);
+}
