@@ -44,29 +44,3 @@ void printSubsetsOfArray(int input[], int size) {
     
 }
 
-
-//APPROACH 2
-void helper(int input[],int size1,int output[],int size2)
-{
-    if(size1==0) //size of input array becomes 0 then print output array
-    {      
-        for(int i=0;i<size2;i++)
-        {
-        cout<<output[i]<<" ";       
-        }
-        cout<<"\n";
-        return;
-    }
-    helper(input+1,size1-1,output,size2); //excluded
-    int newarray[size2+1];     //adding 1 element
-    for(int i=0;i<size2;i++)
-    {
-        newarray[i]=output[i]; //copying the content of output array to new array
-    }
-    newarray[size2]=input[0];  //inserting element to newarray
-    helper(input+1,size1-1,newarray,size2+1); //included
-}
-void printSubsetsOfArray(int input[], int size) { //4
-   int arr[]={};
-    helper(input,size,arr,0);
-}
